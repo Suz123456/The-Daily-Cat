@@ -7,6 +7,23 @@ const SUBMIT_FACT_API_URL = '';
 //API endpoint for searching cat facts
 const SEARCH_FACTS_API_URL = '';
 
+
+//switch between the pages
+document.addEventListener('DOMContentLoaded', function () {
+    const isLandingPage = document.getElementById('generationsPage');
+    const isGenerationsPage = document.getElementById('landingPage');
+    if (isLandingPage) {
+        isLandingPage.addEventListener('click', function () {
+            window.location.href = 'pastgenerations.html';
+        });
+    }
+    if (isGenerationsPage) {
+        isGenerationsPage.addEventListener('click', function () {
+            window.location.href = 'landingpage.html';
+        });
+    }
+});
+
 // Function to fetch a random cat fact
 async function getRandomCatFact() {
     const response = await fetch(CAT_FACTS_API_URL);
